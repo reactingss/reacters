@@ -28,10 +28,11 @@
   4. COLORS: all in :root at the top of <style>.
        --space page bg   --card row bg   --card-hi row hover bg
        --white headings  --grey body text/handles
-       --violet a855f7 — 5.1:1, safe for text (name, accents)
-       --violet-deep 7b3fe4 — BORDERS/RULES ONLY, 3.5:1, never text
+       --accent dcdcdf — bright neutral, safe for text (name, accents)
+       --accent-lt ffffff — brightest highlight
+       --line 4a4a50 — BORDERS/RULES ONLY, never text
        --online 23a55a — presence dot only, never text
-     Nebula is deliberately faint: .neb (gradient clouds), .cloud (noise
+     Monochrome smoke, deliberately faint: .neb (gradient clouds), .cloud (noise
      plate, opacity ~.16), .vig (edge falloff). Raise .cloud opacity or
      the .neb alphas if more colour is ever wanted. Stars: svg.stars.
 
@@ -64,18 +65,18 @@
 <meta name="twitter:title" content="Reacters — links">
 <meta name="twitter:description" content="Reacters — every link in one place. TikTok, YouTube, Discord.">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0714'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23a855f7' stroke-width='2.6' opacity='.55'/%3E%3Cpath d='M9.2 20.8A9 9 0 0 0 20.8 9.2' fill='none' stroke='%23dbe9ff' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='6.4' fill='%230b0714'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23070708'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23d0d0d6' stroke-width='2.6' opacity='.55'/%3E%3Cpath d='M9.2 20.8A9 9 0 0 0 20.8 9.2' fill='none' stroke='%23ffffff' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='16' r='6.4' fill='%23070708'/%3E%3C/svg%3E">
 
 <style>
 :root{
-  --space:#08050f;      /* page bg — near-black, faint violet cast */
-  --card:#17102a;       /* row bg */
-  --card-hi:#211737;    /* row hover bg */
-  --white:#ede9f5;      /* platform names, headings */
-  --grey:#b6adc4;       /* body text + handles — 9.3:1 on --space, 8.5:1 on --card */
-  --violet:#a855f7;     /* 5.1:1 on --space — safe for text */
-  --violet-lt:#d8b4fe;
-  --violet-deep:#7b3fe4;/* borders/rules ONLY — 3.5:1, never text */
+  --space:#070708;      /* page bg — near-black, neutral */
+  --card:#141416;       /* row bg */
+  --card-hi:#1d1d20;    /* row hover bg */
+  --white:#f2f2f3;      /* platform names, headings */
+  --grey:#b9b9bd;       /* body text + handles */
+  --accent:#dcdcdf;     /* bright neutral — safe for text */
+  --accent-lt:#ffffff;
+  --line:#4a4a50;       /* borders/rules ONLY — never text */
   --online:#23a55a;     /* presence dot only */
 
   --ui:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -110,20 +111,20 @@ body{
 .neb{
   position:absolute;inset:-10%;
   background:
-    radial-gradient(34% 24% at 6% 2%,  rgba(186,150,224,.10), transparent 64%),
-    radial-gradient(46% 32% at 13% 8%, rgba(140,84,196,.11),  transparent 68%),
-    radial-gradient(40% 30% at 26% 18%,rgba(104,56,164,.08),  transparent 70%),
-    radial-gradient(56% 40% at 46% 34%,rgba(78,42,128,.05),   transparent 74%),
-    radial-gradient(44% 34% at 86% 70%,rgba(72,40,124,.045),  transparent 72%),
-    radial-gradient(50% 34% at 58% 102%,rgba(60,32,104,.05),  transparent 76%);
+    radial-gradient(34% 24% at 6% 2%,  rgba(232,232,238,.11), transparent 64%),
+    radial-gradient(46% 32% at 13% 8%, rgba(198,198,206,.10), transparent 68%),
+    radial-gradient(40% 30% at 26% 18%,rgba(152,152,160,.075),transparent 70%),
+    radial-gradient(56% 40% at 46% 34%,rgba(112,112,120,.05), transparent 74%),
+    radial-gradient(44% 34% at 86% 70%,rgba(98,98,106,.045),  transparent 72%),
+    radial-gradient(50% 34% at 58% 102%,rgba(82,82,90,.05),   transparent 76%);
 }
 
 .cloud{
   position:absolute;inset:-20%;
   opacity:.16;
   mix-blend-mode:screen;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0125' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.52  0 0 0 0 0.34  0 0 0 0 0.70  0 0 0 -1.35 1.02'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
-  background-size:900px 900px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='700' height='700'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0125' numOctaves='5' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.80  0 0 0 0 0.80  0 0 0 0 0.82  0 0 0 -1.35 1.02'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+  background-size:620px 1500px;
   -webkit-mask-image:radial-gradient(46% 38% at 12% 6%,#000 0%,rgba(0,0,0,.4) 40%,transparent 70%);
           mask-image:radial-gradient(46% 38% at 12% 6%,#000 0%,rgba(0,0,0,.4) 40%,transparent 70%);
 }
@@ -131,8 +132,8 @@ body{
 .cloud::after{
   content:"";position:absolute;inset:0;
   opacity:.4;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='4' seed='19' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.62  0 0 0 0 0.46  0 0 0 0 0.80  0 0 0 -1.5 1.18'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23d)'/%3E%3C/svg%3E");
-  background-size:520px 520px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='d'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035' numOctaves='4' seed='19' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.90  0 0 0 0 0.90  0 0 0 0 0.92  0 0 0 -1.5 1.18'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23d)'/%3E%3C/svg%3E");
+  background-size:380px 980px;
   -webkit-mask-image:radial-gradient(32% 26% at 8% 2%,#000 0%,transparent 74%);
           mask-image:radial-gradient(32% 26% at 8% 2%,#000 0%,transparent 74%);
 }
@@ -186,7 +187,7 @@ body{
   font-weight:800;
   letter-spacing:-.015em;
   line-height:1.1;
-  color:var(--violet-lt);
+  color:var(--accent-lt);
   isolation:isolate;
 }
 /* real emission: a blurred, saturated duplicate sitting behind the glyphs
@@ -199,20 +200,9 @@ body{
   mix-blend-mode:screen;
   pointer-events:none;
 }
-.name::before{color:#a855f7;filter:blur(16px);opacity:.9}
-.name::after{color:#c98bff;filter:blur(5px);opacity:.75}
+.name::before{color:#e4e4ea;filter:blur(16px);opacity:.85}
+.name::after{color:#ffffff;filter:blur(5px);opacity:.7}
 
-.badges{
-  display:flex;justify-content:center;gap:.5rem;
-  margin:.95rem 0 0;
-}
-.badge{
-  width:26px;height:26px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(123,63,228,.18);
-  border:1px solid rgba(123,63,228,.42);
-  color:var(--violet-lt);
-}
 
 /* ============ LINKS ================================================= */
 
@@ -244,17 +234,17 @@ body{
 }
 .row a:hover{
   background:var(--card-hi);
-  border-color:var(--violet);
+  border-color:var(--accent);
   transform:translateY(-2px);
   box-shadow:0 1px 0 rgba(255,255,255,.07) inset,
              0 10px 26px rgba(0,0,0,.6),
              0 0 18px rgba(168,85,247,.16);
 }
 .row a:focus-visible{
-  outline:3px solid #e9d5ff;
+  outline:3px solid #ffffff;
   outline-offset:3px;
   background:var(--card-hi);
-  border-color:var(--violet);
+  border-color:var(--accent);
 }
 
 .ico{
@@ -267,7 +257,7 @@ body{
   transition:color 150ms ease,background-color 150ms ease;
 }
 .row a:hover .ico,.row a:focus-visible .ico{
-  color:var(--violet-lt);
+  color:var(--accent-lt);
   background:rgba(168,85,247,.24);
 }
 
@@ -283,7 +273,7 @@ body{
   color:var(--grey);
   transition:color 150ms ease;
 }
-.row a:hover .arw,.row a:focus-visible .arw{color:var(--violet-lt)}
+.row a:hover .arw,.row a:focus-visible .arw{color:var(--accent-lt)}
 
 @media (min-width:600px){
   .wrap{padding:4.5rem 1.5rem 4rem;max-width:32rem}
@@ -400,11 +390,6 @@ body{
 
     <h1 class="name" data-name="reacters">reacters</h1>
 
-    <div class="badges" aria-hidden="true">
-      <span class="badge"><svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true" focusable="false"><path d="M8 1.5 9.5 6.5 14.5 8 9.5 9.5 8 14.5 6.5 9.5 1.5 8 6.5 6.5Z" fill="currentColor"/></svg></span>
-      <span class="badge"><svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true" focusable="false"><circle cx="8" cy="8" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></span>
-      <span class="badge"><svg viewBox="0 0 16 16" width="11" height="11" aria-hidden="true" focusable="false"><path d="M11.4 10.6A5 5 0 0 1 6.2 3a5 5 0 1 0 5.2 7.6Z" fill="currentColor"/></svg></span>
-    </div>
   </header>
 
   <main>
